@@ -1,0 +1,4 @@
+﻿  renderthread.cpp
+D:\qt_project\mnozestvo_mondelbrot_fractal\mandelbrot\renderthread.cpp(86,28): warning C4189: a1: локальная переменная инициализирована, но не использована
+D:\qt_project\mnozestvo_mondelbrot_fractal\mandelbrot\renderthread.cpp(87,28): warning C4189: b1: локальная переменная инициализирована, но не использована
+  mandelbrot.vcxproj -> D:\qt_project\mnozestvo_mondelbrot_fractal\mandelbrot\debug\mandelbrot.exe

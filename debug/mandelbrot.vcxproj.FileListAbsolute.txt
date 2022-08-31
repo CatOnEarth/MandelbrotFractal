@@ -1,0 +1,6 @@
+D:\qt_project\mandelbrot\debug\mandelbrot.exe
+D:\qt_project\mandelbrot\debug\mandelbrot.pdb
+D:\qt_project\множество мальдеброта(фрактал)\mandelbrot\debug\mandelbrot.exe
+D:\qt_project\множество мальдеброта(фрактал)\mandelbrot\debug\mandelbrot.pdb
+D:\qt_project\mnozestvo_mondelbrot_fractal\mandelbrot\debug\mandelbrot.exe
+D:\qt_project\mnozestvo_mondelbrot_fractal\mandelbrot\debug\mandelbrot.pdb
