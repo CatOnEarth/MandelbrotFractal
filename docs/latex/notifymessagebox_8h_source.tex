@@ -1,0 +1,46 @@
+\hypertarget{notifymessagebox_8h_source}{}\doxysection{notifymessagebox.\+h}
+\mbox{\hyperlink{notifymessagebox_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00001}\mbox{\hyperlink{class_notify_message_box_a19e275e0e4d3b7c4975e400a94de8c30}{00001}} \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00003}00003 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <QStaticText>}}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00006}00006 \textcolor{keyword}{class }QLabel;}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00008}\mbox{\hyperlink{class_notify_message_box}{00008}} \textcolor{keyword}{class }\mbox{\hyperlink{class_notify_message_box}{NotifyMessageBox}} : \textcolor{keyword}{public} QWidget}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00010}00010     Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00011}00011     Q\_PROPERTY(qreal \mbox{\hyperlink{class_notify_message_box_a19e275e0e4d3b7c4975e400a94de8c30}{opacity}} READ \mbox{\hyperlink{class_notify_message_box_a19e275e0e4d3b7c4975e400a94de8c30}{opacity}} WRITE \mbox{\hyperlink{class_notify_message_box_ad7f60d38cc32d673501db6d27454fbc0}{setOpacity}})}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00013}00013 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00014}00014     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_notify_message_box_a6d2639a78826bcca3f9041e9ac5cd7ae}{NotifyMessageBox}}(\textcolor{keyword}{const} QString\& text, QWidget* parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00015}00015     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_notify_message_box_a6d2639a78826bcca3f9041e9ac5cd7ae}{NotifyMessageBox}}(\textcolor{keyword}{const} QString\& text, \textcolor{keyword}{const} QFont\& font, \textcolor{keywordtype}{int} milliseconds, QWidget* parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00016}00016     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_notify_message_box_a6d2639a78826bcca3f9041e9ac5cd7ae}{NotifyMessageBox}}(\textcolor{keyword}{const} QString\& text, \textcolor{keywordtype}{int} milliseconds, QWidget* parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00017}00017     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_notify_message_box_a386fa5a08712512dfe4e81e450d62044}{\string~NotifyMessageBox}}();}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00019}00019 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00020}00020     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_notify_message_box_a708abad52a722f23cfcdd47abc51e43f}{showImmediatly}}();}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00021}00021     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_notify_message_box_a49459f431f9085bb42601eb6976c91ea}{run}}();}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00023}00023     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_notify_message_box_a2e22bb5dda79bd727f1aa416e2cd0fa8}{fadeOut}}();}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00025}00025     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_notify_message_box_ad7f60d38cc32d673501db6d27454fbc0}{setOpacity}}(qreal \mbox{\hyperlink{class_notify_message_box_a19e275e0e4d3b7c4975e400a94de8c30}{opacity}});}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00026}00026     qreal \mbox{\hyperlink{class_notify_message_box_a19e275e0e4d3b7c4975e400a94de8c30}{opacity}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00028}00028 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00029}00029     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_notify_message_box_a1e0cccaffdfa017164246c8438752a52}{showMessage}}(\textcolor{keyword}{const} QString\& message, QWidget* parent);}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00030}00030     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_notify_message_box_a1e0cccaffdfa017164246c8438752a52}{showMessage}}(\textcolor{keyword}{const} QString\& message, \textcolor{keyword}{const} QFont\& font, QWidget* parent);}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00031}00031     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_notify_message_box_a1e0cccaffdfa017164246c8438752a52}{showMessage}}(\textcolor{keyword}{const} QString\& message, \textcolor{keywordtype}{int} milliseconds, QWidget* parent);}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00032}00032     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_notify_message_box_a1e0cccaffdfa017164246c8438752a52}{showMessage}}(\textcolor{keyword}{const} QString\& message, \textcolor{keyword}{const} QFont\& font, \textcolor{keywordtype}{int} milliseconds, QWidget* parent);}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00034}00034 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00035}00035     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_notify_message_box_af5f366a886dfb93885caaa0dcab8983d}{paintEvent}}(QPaintEvent* event) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00037}00037 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00038}00038     QStaticText m\_label;}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00039}00039     qreal m\_opacity;}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00040}00040     \textcolor{keywordtype}{int} m\_milliseconds;}
+\DoxyCodeLine{\Hypertarget{notifymessagebox_8h_source_l00041}00041 \};}
+
+\end{DoxyCode}

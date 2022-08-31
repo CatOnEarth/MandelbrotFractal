@@ -1,0 +1,218 @@
+\hypertarget{class_render_thread}{}\doxysection{Render\+Thread Class Reference}
+\label{class_render_thread}\index{RenderThread@{RenderThread}}
+
+
+\mbox{[}0\mbox{]}  
+
+
+
+
+{\ttfamily \#include $<$renderthread.\+h$>$}
+
+
+
+Inheritance diagram for Render\+Thread\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{class_render_thread__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Render\+Thread\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{class_render_thread__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_render_thread_ac126b7b1ffc7618e279da1c1f32a0234}{rendered\+Image}} (const QImage \&image, double scale\+Factor)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_render_thread_a0f74225095ff6d1bde8225d8047e932f}{Render\+Thread}} (QObject $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{class_render_thread_ac9a968ad63349a9eb1109d615406afd4}{$\sim$\+Render\+Thread}} ()
+\item 
+void \mbox{\hyperlink{class_render_thread_acc5917dafe5f14df6fcbd896a26c555d}{render}} (double centerX, double centerY, double scale\+Factor, QSize result\+Size)
+\item 
+void \mbox{\hyperlink{class_render_thread_ac0de06ba94127ab3eb0004211cd8f102}{Change\+Color}} (double r\+\_\+, double g\+\_\+, double b\+\_\+)
+\item 
+void \mbox{\hyperlink{class_render_thread_a42376b1ab555d6be3f508f195ece4132}{reload\+Color\+Map}} ()
+\item 
+void \mbox{\hyperlink{class_render_thread_aa39d3c9cb497c396e4aa9bb0b614c08d}{Set\+Default\+Color}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_render_thread_a487d5197ce6536604147bcb823b05457}{run}} () override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{[}0\mbox{]} 
+
+Definition at line \mbox{\hyperlink{renderthread_8h_source_l00015}{15}} of file \mbox{\hyperlink{renderthread_8h_source}{renderthread.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_render_thread_a0f74225095ff6d1bde8225d8047e932f}\label{class_render_thread_a0f74225095ff6d1bde8225d8047e932f}} 
+\index{RenderThread@{RenderThread}!RenderThread@{RenderThread}}
+\index{RenderThread@{RenderThread}!RenderThread@{RenderThread}}
+\doxysubsubsection{\texorpdfstring{RenderThread()}{RenderThread()}}
+{\footnotesize\ttfamily Render\+Thread\+::\+Render\+Thread (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{renderthread_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{renderthread_8cpp_source}{renderthread.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_render_thread_a0f74225095ff6d1bde8225d8047e932f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_render_thread_ac9a968ad63349a9eb1109d615406afd4}\label{class_render_thread_ac9a968ad63349a9eb1109d615406afd4}} 
+\index{RenderThread@{RenderThread}!````~RenderThread@{$\sim$RenderThread}}
+\index{````~RenderThread@{$\sim$RenderThread}!RenderThread@{RenderThread}}
+\doxysubsubsection{\texorpdfstring{$\sim$RenderThread()}{~RenderThread()}}
+{\footnotesize\ttfamily Render\+Thread\+::$\sim$\+Render\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{renderthread_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{renderthread_8cpp_source}{renderthread.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_render_thread_ac0de06ba94127ab3eb0004211cd8f102}\label{class_render_thread_ac0de06ba94127ab3eb0004211cd8f102}} 
+\index{RenderThread@{RenderThread}!ChangeColor@{ChangeColor}}
+\index{ChangeColor@{ChangeColor}!RenderThread@{RenderThread}}
+\doxysubsubsection{\texorpdfstring{ChangeColor()}{ChangeColor()}}
+{\footnotesize\ttfamily void Render\+Thread\+::\+Change\+Color (\begin{DoxyParamCaption}\item[{double}]{r\+\_\+,  }\item[{double}]{g\+\_\+,  }\item[{double}]{b\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{renderthread_8h_source_l00025}{25}} of file \mbox{\hyperlink{renderthread_8h_source}{renderthread.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_render_thread_ac0de06ba94127ab3eb0004211cd8f102_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_render_thread_ac0de06ba94127ab3eb0004211cd8f102_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_render_thread_a42376b1ab555d6be3f508f195ece4132}\label{class_render_thread_a42376b1ab555d6be3f508f195ece4132}} 
+\index{RenderThread@{RenderThread}!reloadColorMap@{reloadColorMap}}
+\index{reloadColorMap@{reloadColorMap}!RenderThread@{RenderThread}}
+\doxysubsubsection{\texorpdfstring{reloadColorMap()}{reloadColorMap()}}
+{\footnotesize\ttfamily void Render\+Thread\+::reload\+Color\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{renderthread_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{renderthread_8cpp_source}{renderthread.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_render_thread_a42376b1ab555d6be3f508f195ece4132_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_render_thread_acc5917dafe5f14df6fcbd896a26c555d}\label{class_render_thread_acc5917dafe5f14df6fcbd896a26c555d}} 
+\index{RenderThread@{RenderThread}!render@{render}}
+\index{render@{render}!RenderThread@{RenderThread}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Render\+Thread\+::render (\begin{DoxyParamCaption}\item[{double}]{centerX,  }\item[{double}]{centerY,  }\item[{double}]{scale\+Factor,  }\item[{QSize}]{result\+Size }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{renderthread_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{renderthread_8cpp_source}{renderthread.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_render_thread_acc5917dafe5f14df6fcbd896a26c555d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_render_thread_ac126b7b1ffc7618e279da1c1f32a0234}\label{class_render_thread_ac126b7b1ffc7618e279da1c1f32a0234}} 
+\index{RenderThread@{RenderThread}!renderedImage@{renderedImage}}
+\index{renderedImage@{renderedImage}!RenderThread@{RenderThread}}
+\doxysubsubsection{\texorpdfstring{renderedImage}{renderedImage}}
+{\footnotesize\ttfamily void Render\+Thread\+::rendered\+Image (\begin{DoxyParamCaption}\item[{const QImage \&}]{image,  }\item[{double}]{scale\+Factor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line \mbox{\hyperlink{debug_2moc__renderthread_8cpp_source_l00131}{131}} of file \mbox{\hyperlink{debug_2moc__renderthread_8cpp_source}{moc\+\_\+renderthread.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_render_thread_ac126b7b1ffc7618e279da1c1f32a0234_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_render_thread_a487d5197ce6536604147bcb823b05457}\label{class_render_thread_a487d5197ce6536604147bcb823b05457}} 
+\index{RenderThread@{RenderThread}!run@{run}}
+\index{run@{run}!RenderThread@{RenderThread}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Render\+Thread\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{renderthread_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{renderthread_8cpp_source}{renderthread.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_render_thread_a487d5197ce6536604147bcb823b05457_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_render_thread_aa39d3c9cb497c396e4aa9bb0b614c08d}\label{class_render_thread_aa39d3c9cb497c396e4aa9bb0b614c08d}} 
+\index{RenderThread@{RenderThread}!SetDefaultColor@{SetDefaultColor}}
+\index{SetDefaultColor@{SetDefaultColor}!RenderThread@{RenderThread}}
+\doxysubsubsection{\texorpdfstring{SetDefaultColor()}{SetDefaultColor()}}
+{\footnotesize\ttfamily void Render\+Thread\+::\+Set\+Default\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{renderthread_8h_source_l00034}{34}} of file \mbox{\hyperlink{renderthread_8h_source}{renderthread.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_render_thread_aa39d3c9cb497c396e4aa9bb0b614c08d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_render_thread_aa39d3c9cb497c396e4aa9bb0b614c08d_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{renderthread_8h}{renderthread.\+h}}\item 
+debug/\mbox{\hyperlink{debug_2moc__renderthread_8cpp}{moc\+\_\+renderthread.\+cpp}}\item 
+release/\mbox{\hyperlink{release_2moc__renderthread_8cpp}{moc\+\_\+renderthread.\+cpp}}\item 
+\mbox{\hyperlink{renderthread_8cpp}{renderthread.\+cpp}}\end{DoxyCompactItemize}

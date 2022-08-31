@@ -1,0 +1,81 @@
+\hypertarget{mandelbrotwidget_8h_source}{}\doxysection{mandelbrotwidget.\+h}
+\mbox{\hyperlink{mandelbrotwidget_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef MANDELBROTWIDGET\_H}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00002}00002 \textcolor{preprocessor}{\#define MANDELBROTWIDGET\_H}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <QPixmap>}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{renderthread_8h}{renderthread.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00007}00007 \textcolor{preprocessor}{\#include <qmenu.h>}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <QMenuBar>}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00009}00009 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{notifymessagebox_8h}{notifymessagebox.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{rubberband_8h}{rubberband.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00011}00011 \textcolor{preprocessor}{\#include <qtooltip.h>}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00012}00012 \textcolor{preprocessor}{\#include <QRubberBand>}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00013}00013 \textcolor{preprocessor}{\#include <QPaintEvent>}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00014}00014 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{dialoginformation_8h}{dialoginformation.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00015}00015 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{typesavescale_8h}{typesavescale.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00016}00016 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00017}00017 \textcolor{preprocessor}{\#include <ctime>}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00021}\mbox{\hyperlink{class_mandelbrot_widget}{00021}} \textcolor{keyword}{class }\mbox{\hyperlink{class_mandelbrot_widget}{MandelbrotWidget}} : \textcolor{keyword}{public} QWidget}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00022}00022 \{}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00023}00023     Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00025}00025 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00026}00026     \mbox{\hyperlink{class_mandelbrot_widget_aa06ed710f91b11714cbe3c2c2c1b0a8a}{MandelbrotWidget}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00028}00028 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00029}00029     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mandelbrot_widget_a601f528d8934a922e99aa2aed22c824e}{paintEvent}}(QPaintEvent *event) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00030}00030     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mandelbrot_widget_a3a16568cf4ccee4272fc37cc0bc5ef28}{resizeEvent}}(QResizeEvent *event) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00031}00031     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mandelbrot_widget_ac3d301aec6cb572ec6b596b43452cf05}{keyPressEvent}}(QKeyEvent *event) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00032}00032 \textcolor{preprocessor}{\#if QT\_CONFIG(wheelevent)}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00033}00033     \textcolor{keywordtype}{void} wheelEvent(QWheelEvent *event) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00034}00034 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00035}00035     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mandelbrot_widget_a3491110a13275a9cdde1390eae495fa5}{mousePressEvent}}(QMouseEvent *event) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00036}00036     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mandelbrot_widget_ab952ec309397de3888a52a7a3c964e3c}{mouseMoveEvent}}(QMouseEvent *event) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00037}00037     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mandelbrot_widget_a8695e10e2327256a31e5546499e6e170}{mouseReleaseEvent}}(QMouseEvent *event) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00039}00039 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00040}00040     \textcolor{keywordtype}{void} updatePixmap(\textcolor{keyword}{const} QImage \&image, \textcolor{keywordtype}{double} scaleFactor);}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00041}00041     \textcolor{keywordtype}{void} zoom(\textcolor{keywordtype}{double} zoomFactor);}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00043}00043 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00044}00044     \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} TYPE\_SCALE = 0; \textcolor{comment}{// \{0\} мышь; \{1\} выделение областей }}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00045}00045     \textcolor{keyword}{const} \textcolor{keywordtype}{double} DefaultCenterX = -\/0.2;}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00046}00046     \textcolor{keyword}{const} \textcolor{keywordtype}{double} DefaultCenterY = -\/0.2;}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00047}00047     \textcolor{keyword}{const} \textcolor{keywordtype}{double} DefaultScale = 0.00403897f;}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00049}00049     \textcolor{keyword}{const} \textcolor{keywordtype}{double} ZoomInFactor = 0.8f;}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00050}00050     \textcolor{keyword}{const} \textcolor{keywordtype}{double} ZoomOutFactor = 1 / ZoomInFactor;}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00051}00051     \textcolor{keyword}{const} \textcolor{keywordtype}{int} ScrollStep = 20;}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00053}00053     QString HIN\_USE\_ZOOM\_MOUSE = u8\textcolor{stringliteral}{"{}Для маштабирования используйте колесико мыши или + -\/. Для перемешения используйте курсор или стрелочки"{}};}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00055}00055     QString HIN\_USE\_ZOOM\_OBL = u8\textcolor{stringliteral}{"{}Для маштабирования выделите область. Для перемешения стрелочки"{}};}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00057}00057     QString HINT\_CREATE\_IMAGE = u8\textcolor{stringliteral}{"{}Создание изображение. Пожалуйста подождите..."{}};}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00059}00059     QString HINT\_MOOD\_MOUSE = u8\textcolor{stringliteral}{"{}Режим управления мышью"{}};}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00060}00060     QString HINT\_MOOD\_OBL = u8\textcolor{stringliteral}{"{}Режим выделения областей"{}};}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00061}00061     \textcolor{keywordtype}{void} scroll(\textcolor{keywordtype}{int} deltaX, \textcolor{keywordtype}{int} deltaY);}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00063}00063     \mbox{\hyperlink{class_render_thread}{RenderThread}} thread;}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00064}00064     QPixmap pixmap;}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00065}00065     QPoint pixmapOffset;}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00066}00066     QPoint lastDragPos;}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00067}00067     \textcolor{keywordtype}{double} centerX;}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00068}00068     \textcolor{keywordtype}{double} centerY;}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00069}00069     \textcolor{keywordtype}{double} pixmapScale;}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00070}00070     \textcolor{keywordtype}{double} curScale;}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00072}00072     \mbox{\hyperlink{class_rubber_band}{RubberBand}} *rubberband;}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00074}00074     std::vector<TypeSaveScale> save\_last\_status\_of\_fractal;}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00075}00075 \};}
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{mandelbrotwidget_8h_source_l00078}00078 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MANDELBROTWIDGET\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,60 @@
+\hypertarget{_complex_8cpp_source}{}\doxysection{Complex.\+cpp}
+\mbox{\hyperlink{_complex_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_complex_8h}{Complex.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00003}\mbox{\hyperlink{class_complex__my_a17b86c0d7982eddff245673b073779b4}{00003}} \mbox{\hyperlink{class_complex__my_a17b86c0d7982eddff245673b073779b4}{Complex\_my::Complex\_my}}() \{}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00004}00004     re = 0;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00005}00005     im = 0;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00006}00006 \}}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00008}\mbox{\hyperlink{class_complex__my_a93089aa39a2106f2f5402c6fce58af7b}{00008}} \mbox{\hyperlink{class_complex__my_a17b86c0d7982eddff245673b073779b4}{Complex\_my::Complex\_my}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_complex__my}{Complex\_my}}\& other) \{}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00009}00009     re = other.re;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00010}00010     im = other.im;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00011}00011 \}}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00013}\mbox{\hyperlink{class_complex__my_a4dd7aa9a9f1f2f6f226ccfb7595c247c}{00013}} \mbox{\hyperlink{class_complex__my_a17b86c0d7982eddff245673b073779b4}{Complex\_my::Complex\_my}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& re\_, \textcolor{keyword}{const} \textcolor{keywordtype}{double}\& im\_) \{}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00014}00014     re = re\_;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00015}00015     im = im\_;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00016}00016 \}}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00018}\mbox{\hyperlink{class_complex__my_a473099664fdbd5798fd6546138ad89f4}{00018}} \mbox{\hyperlink{class_complex__my_a17b86c0d7982eddff245673b073779b4}{Complex\_my::Complex\_my}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& re\_) \{}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00019}00019     re = re\_;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00020}00020     im = 0;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00021}00021 \}}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00023}\mbox{\hyperlink{class_complex__my_a4702848acfb302ecbbd223e0227d07a4}{00023}} \mbox{\hyperlink{class_complex__my}{Complex\_my}} \mbox{\hyperlink{class_complex__my_a4702848acfb302ecbbd223e0227d07a4}{Complex\_my::operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_complex__my}{Complex\_my}}\& other) \{}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00024}00024     re = other.re;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00025}00025     im = other.im;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00026}00026     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00027}00027 \}}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00029}\mbox{\hyperlink{class_complex__my_ae3ec3f92cdf01f7a9ebcdce2949ed289}{00029}} \mbox{\hyperlink{class_complex__my}{Complex\_my}} \mbox{\hyperlink{class_complex__my_ae3ec3f92cdf01f7a9ebcdce2949ed289}{Complex\_my::operator+}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_complex__my}{Complex\_my}}\& other) \{}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00030}00030     \mbox{\hyperlink{class_complex__my}{Complex\_my}} c(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00031}00031     \textcolor{keywordflow}{return} c += other;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00032}00032 \}}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00034}\mbox{\hyperlink{class_complex__my_abff025b375a0dd0082fb98f89cbd2dbc}{00034}} \mbox{\hyperlink{class_complex__my}{Complex\_my}} \mbox{\hyperlink{class_complex__my_abff025b375a0dd0082fb98f89cbd2dbc}{Complex\_my::operator+=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_complex__my}{Complex\_my}}\& other) \{}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00035}00035     re += other.re;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00036}00036     im += other.im;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00037}00037     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00038}00038 \}}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00040}\mbox{\hyperlink{class_complex__my_a72880f1af4ea18a0c50d8fd8b70a01f5}{00040}} \mbox{\hyperlink{class_complex__my}{Complex\_my}} \mbox{\hyperlink{class_complex__my_a72880f1af4ea18a0c50d8fd8b70a01f5}{Complex\_my::operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_complex__my}{Complex\_my}}\& other) \{}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00041}00041     \mbox{\hyperlink{class_complex__my}{Complex\_my}} c(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00042}00042     \textcolor{keywordflow}{return} c *= other;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00043}00043 \}}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00045}\mbox{\hyperlink{class_complex__my_acf5e202ff485a74b97b499eaf5be4ca4}{00045}} \mbox{\hyperlink{class_complex__my}{Complex\_my}} \mbox{\hyperlink{class_complex__my_acf5e202ff485a74b97b499eaf5be4ca4}{Complex\_my::operator*=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_complex__my}{Complex\_my}}\& other) \{}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00046}00046     \mbox{\hyperlink{class_complex__my}{Complex\_my}} c;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00047}00047     c.re = re * other.re -\/ im * other.im;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00048}00048     c.im = re * other.im + im * other.re;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00049}00049     *\textcolor{keyword}{this} = c;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00050}00050     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00051}00051 \}}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00053}\mbox{\hyperlink{class_complex__my_a9ad183901e89e91fb8180bd925760180}{00053}} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_complex__my_a9ad183901e89e91fb8180bd925760180}{Complex\_my::module\_sqr}}()\textcolor{keyword}{const }\{}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00054}00054     \textcolor{keywordflow}{return} re * re + im * im;}
+\DoxyCodeLine{\Hypertarget{_complex_8cpp_source_l00055}00055 \}}
+
+\end{DoxyCode}

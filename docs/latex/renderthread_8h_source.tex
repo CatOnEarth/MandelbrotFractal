@@ -1,0 +1,84 @@
+\hypertarget{renderthread_8h_source}{}\doxysection{renderthread.\+h}
+\mbox{\hyperlink{renderthread_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef RENDERTHREAD\_H}}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00002}00002 \textcolor{preprocessor}{\#define RENDERTHREAD\_H}}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <QMutex>}}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <QSize>}}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00006}00006 \textcolor{preprocessor}{\#include <QThread>}}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00007}00007 \textcolor{preprocessor}{\#include <QWaitCondition>}}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_complex_8h}{Complex.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00010}00010 QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00011}00011 \textcolor{keyword}{class }QImage;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00012}00012 QT\_END\_NAMESPACE}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00015}\mbox{\hyperlink{class_render_thread}{00015}} \textcolor{keyword}{class }\mbox{\hyperlink{class_render_thread}{RenderThread}} : \textcolor{keyword}{public} QThread}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00016}00016 \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00017}00017     Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00019}00019 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00020}00020     \mbox{\hyperlink{class_render_thread_a0f74225095ff6d1bde8225d8047e932f}{RenderThread}}(QObject *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00021}00021     \mbox{\hyperlink{class_render_thread_ac9a968ad63349a9eb1109d615406afd4}{\string~RenderThread}}();}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00023}00023     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_render_thread_acc5917dafe5f14df6fcbd896a26c555d}{render}}(\textcolor{keywordtype}{double} centerX, \textcolor{keywordtype}{double} centerY, \textcolor{keywordtype}{double} scaleFactor, QSize resultSize);}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00025}\mbox{\hyperlink{class_render_thread_ac0de06ba94127ab3eb0004211cd8f102}{00025}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_render_thread_ac0de06ba94127ab3eb0004211cd8f102}{ChangeColor}}(\textcolor{keywordtype}{double} r\_, \textcolor{keywordtype}{double} g\_, \textcolor{keywordtype}{double} b\_) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00026}00026         type\_b = b\_;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00027}00027         type\_g = g\_;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00028}00028         type\_r = r\_;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00029}00029         \mbox{\hyperlink{class_render_thread_a42376b1ab555d6be3f508f195ece4132}{reloadColorMap}}();}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00030}00030     \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00032}00032     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_render_thread_a42376b1ab555d6be3f508f195ece4132}{reloadColorMap}}();}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00034}\mbox{\hyperlink{class_render_thread_aa39d3c9cb497c396e4aa9bb0b614c08d}{00034}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_render_thread_aa39d3c9cb497c396e4aa9bb0b614c08d}{SetDefaultColor}}() \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00035}00035         type\_b = start\_b;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00036}00036         type\_g = start\_g;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00037}00037         type\_r = start\_r;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00038}00038         \mbox{\hyperlink{class_render_thread_a42376b1ab555d6be3f508f195ece4132}{reloadColorMap}}();}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00041}00041 signals:}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00042}00042     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_render_thread_ac126b7b1ffc7618e279da1c1f32a0234}{renderedImage}}(\textcolor{keyword}{const} QImage \&image, \textcolor{keywordtype}{double} scaleFactor);}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00044}00044 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00045}00045     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_render_thread_a487d5197ce6536604147bcb823b05457}{run}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00047}00047 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00048}00048     \textcolor{keyword}{const} \textcolor{keywordtype}{double} DefaultCenterX = -\/0.637011f;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00049}00049     \textcolor{keyword}{const} \textcolor{keywordtype}{double} DefaultCenterY = -\/0.0395159f;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00050}00050     \textcolor{keyword}{const} \textcolor{keywordtype}{double} DefaultScale = 0.00403897f;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00052}00052     \textcolor{keyword}{const} \textcolor{keywordtype}{double} ZoomInFactor = 0.8f;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00053}00053     \textcolor{keyword}{const} \textcolor{keywordtype}{double} ZoomOutFactor = 1 / ZoomInFactor;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00054}00054     \textcolor{keyword}{const} \textcolor{keywordtype}{int} ScrollStep = 20;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00056}00056     \textcolor{keyword}{const} \textcolor{keywordtype}{double} start\_r = 0.3;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00057}00057     \textcolor{keyword}{const} \textcolor{keywordtype}{double} start\_g = 2;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00058}00058     \textcolor{keyword}{const} \textcolor{keywordtype}{double} start\_b = 1;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00061}00061     uint rgbFromWaveLength(\textcolor{keywordtype}{double} wave);}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00063}00063     QMutex mutex;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00064}00064     QWaitCondition condition;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00065}00065     \textcolor{keywordtype}{double} centerX;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00066}00066     \textcolor{keywordtype}{double} centerY;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00067}00067     \textcolor{keywordtype}{double} scaleFactor;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00068}00068     QSize resultSize;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00069}00069     \textcolor{keywordtype}{bool} restart;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00070}00070     \textcolor{keywordtype}{bool} abort;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00072}00072     \textcolor{keywordtype}{double} type\_b;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00073}00073     \textcolor{keywordtype}{double} type\_g;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00074}00074     \textcolor{keywordtype}{double} type\_r;}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00076}00076     \textcolor{keyword}{enum} \{ ColormapSize = 512 \};}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00077}00077     uint colormap[ColormapSize];}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00078}00078 \};}
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{renderthread_8h_source_l00081}00081 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// RENDERTHREAD\_H}}
+
+\end{DoxyCode}

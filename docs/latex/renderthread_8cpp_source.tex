@@ -1,0 +1,173 @@
+\hypertarget{renderthread_8cpp_source}{}\doxysection{renderthread.\+cpp}
+\mbox{\hyperlink{renderthread_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{renderthread_8h}{renderthread.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <QImage>}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00006}\mbox{\hyperlink{class_render_thread_a0f74225095ff6d1bde8225d8047e932f}{00006}} \mbox{\hyperlink{class_render_thread_a0f74225095ff6d1bde8225d8047e932f}{RenderThread::RenderThread}}(QObject* parent)}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00007}00007     : QThread(parent)}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00009}00009     restart = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00010}00010     abort = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00011}00011     type\_r = start\_r;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00012}00012     type\_g = start\_g;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00013}00013     type\_b = start\_b;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00014}00014     \mbox{\hyperlink{class_render_thread_a42376b1ab555d6be3f508f195ece4132}{reloadColorMap}}();}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00015}00015 \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00017}\mbox{\hyperlink{class_render_thread_a42376b1ab555d6be3f508f195ece4132}{00017}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_render_thread_a42376b1ab555d6be3f508f195ece4132}{RenderThread::reloadColorMap}}() \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00018}00018     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < ColormapSize; ++i) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00019}00019         colormap[i] = rgbFromWaveLength(380.0 + (i * 400.0 / ColormapSize));}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00020}00020     \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00021}00021 \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00024}\mbox{\hyperlink{class_render_thread_ac9a968ad63349a9eb1109d615406afd4}{00024}} \mbox{\hyperlink{class_render_thread_ac9a968ad63349a9eb1109d615406afd4}{RenderThread::\string~RenderThread}}() \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00025}00025     mutex.lock();}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00026}00026     abort = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00027}00027     condition.wakeOne();}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00028}00028     mutex.unlock();}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00030}00030     wait();}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00031}00031 \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00034}\mbox{\hyperlink{class_render_thread_acc5917dafe5f14df6fcbd896a26c555d}{00034}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_render_thread_acc5917dafe5f14df6fcbd896a26c555d}{RenderThread::render}}(\textcolor{keywordtype}{double} centerX, \textcolor{keywordtype}{double} centerY, \textcolor{keywordtype}{double} scaleFactor, QSize resultSize) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00035}00035     QMutexLocker locker(\&mutex);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00037}00037     this-\/>centerX = centerX;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00038}00038     this-\/>centerY = centerY;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00039}00039     this-\/>scaleFactor = scaleFactor;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00040}00040     this-\/>resultSize = resultSize;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00042}00042     \textcolor{keywordflow}{if} (!isRunning()) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00043}00043         start(HighestPriority);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00044}00044     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00045}00045         restart = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00046}00046         condition.wakeOne();}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00047}00047     \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00048}00048 \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00051}\mbox{\hyperlink{class_render_thread_a487d5197ce6536604147bcb823b05457}{00051}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_render_thread_a487d5197ce6536604147bcb823b05457}{RenderThread::run}}() \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00052}00052     forever \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00053}00053         mutex.lock();}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00054}00054         QSize resultSize = this-\/>resultSize;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00055}00055         \textcolor{keywordtype}{double} scaleFactor = this-\/>scaleFactor;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00056}00056         \textcolor{keywordtype}{double} centerX = this-\/>centerX;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00057}00057         \textcolor{keywordtype}{double} centerY = this-\/>centerY;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00058}00058         mutex.unlock();}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00060}00060         \textcolor{keywordtype}{int} halfWidth = resultSize.width() / 2;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00061}00061         \textcolor{keywordtype}{int} halfHeight = resultSize.height() / 2;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00062}00062         QImage image(resultSize, QImage::Format\_RGB32);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00064}00064         \textcolor{keyword}{const} \textcolor{keywordtype}{int} NumPasses = 8;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00065}00065         \textcolor{keywordtype}{int} pass = 0;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00066}00066         \textcolor{keywordflow}{while} (pass < NumPasses) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00067}00067             \textcolor{keyword}{const} \textcolor{keywordtype}{int} MaxIterations = (1 << (2 * 4 + 6)) + 32;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00068}00068            \textcolor{comment}{// const int MaxIterations = 512;}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00069}00069             \textcolor{keyword}{const} \textcolor{keywordtype}{int} Limit = 4;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00070}00070             \textcolor{keywordtype}{bool} allBlack = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00072}00072             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} y = -\/halfHeight; y < halfHeight; ++y) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00073}00073                 \textcolor{keywordflow}{if} (restart) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00074}00074                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00075}00075                 \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00077}00077                 \textcolor{keywordflow}{if} (abort) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00078}00078                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00079}00079                 \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00081}00081                 uint *scanLine = \textcolor{keyword}{reinterpret\_cast<}uint *\textcolor{keyword}{>}(image.scanLine(y + halfHeight));}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00082}00082                 \textcolor{keywordtype}{double} ay = centerY + (y * scaleFactor);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00084}00084                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x = -\/halfWidth; x < halfWidth; ++x) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00085}00085                     \textcolor{keywordtype}{double} ax = centerX + (x * scaleFactor);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00086}00086                     \textcolor{keywordtype}{double} a1 = ax;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00087}00087                     \textcolor{keywordtype}{double} b1 = ay;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00088}00088                     \textcolor{keywordtype}{int} numIterations = 0;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00089}00089                     \mbox{\hyperlink{class_complex__my}{Complex\_my}} curr;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00090}00090                     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00091}00091                         ++numIterations;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00092}00092                         \textcolor{keywordflow}{if} (curr.\mbox{\hyperlink{class_complex__my_a9ad183901e89e91fb8180bd925760180}{module\_sqr}}() > Limit) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00093}00093                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00094}00094                         \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00095}00095                         ++numIterations;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00096}00096                         curr = curr * curr + \mbox{\hyperlink{class_complex__my}{Complex\_my}}(ax, ay);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00097}00097                         \textcolor{keywordflow}{if} (curr.\mbox{\hyperlink{class_complex__my_a9ad183901e89e91fb8180bd925760180}{module\_sqr}}() > Limit) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00098}00098                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00099}00099                         \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00100}00100                     \} \textcolor{keywordflow}{while} (numIterations < MaxIterations);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00102}00102                     \textcolor{keywordflow}{if} (numIterations < MaxIterations) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00103}00103                         *scanLine++ = colormap[numIterations \% ColormapSize];}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00104}00104                         allBlack = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00105}00105                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00106}00106                         *scanLine++ = qRgb(0, 0, 0);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00107}00107                     \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00108}00108                 \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00109}00109             \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00111}00111             \textcolor{keywordflow}{if} (allBlack \&\& pass == 0) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00112}00112                 pass = 4;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00113}00113             \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00114}00114             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00115}00115                 \textcolor{keywordflow}{if} (!restart) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00116}00116                     emit \mbox{\hyperlink{class_render_thread_ac126b7b1ffc7618e279da1c1f32a0234}{renderedImage}}(image, scaleFactor);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00117}00117                 \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00118}00118                 ++pass;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00119}00119             \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00120}00120         \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00122}00122         mutex.lock();}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00123}00123         \textcolor{keywordflow}{if} (!restart) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00124}00124             condition.wait(\&mutex);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00125}00125         \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00126}00126         restart = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00127}00127         mutex.unlock();}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00128}00128     \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00129}00129 \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00132}00132 uint RenderThread::rgbFromWaveLength(\textcolor{keywordtype}{double} wave) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00133}00133     \textcolor{keywordtype}{double} r = 0.0;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00134}00134     \textcolor{keywordtype}{double} g = 0.0;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00135}00135     \textcolor{keywordtype}{double} b = 0.0;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00137}00137     \textcolor{keywordflow}{if} (wave >= 380.0 \&\& wave <= 440.0) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00138}00138         r = -\/1.0 * (wave -\/ 440.0) / (440.0 -\/ 380.0);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00139}00139         b = 1.0;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00140}00140     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wave >= 440.0 \&\& wave <= 490.0) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00141}00141         g = (wave -\/ 440.0) / (490.0 -\/ 440.0);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00142}00142         b = 1.0;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00143}00143     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wave >= 490.0 \&\& wave <= 510.0) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00144}00144         g = 1.0;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00145}00145         b = -\/1.0 * (wave -\/ 510.0) / (510.0 -\/ 490.0);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00146}00146     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wave >= 510.0 \&\& wave <= 580.0) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00147}00147         r = (wave -\/ 510.0) / (580.0 -\/ 510.0);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00148}00148         g = 1.0;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00149}00149     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wave >= 580.0 \&\& wave <= 645.0) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00150}00150         r = 1.0;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00151}00151         g = -\/1.0 * (wave -\/ 645.0) / (645.0 -\/ 580.0);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00152}00152     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wave >= 645.0 \&\& wave <= 780.0) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00153}00153         r = 1.0;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00154}00154     \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00156}00156     \textcolor{keywordtype}{double} s = 1.0;}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00157}00157     \textcolor{keywordflow}{if} (wave > 700.0) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00158}00158         s = 0.3 + 0.7 * (780.0 -\/ wave) / (780.0 -\/ 700.0);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00159}00159     \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00160}00160     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wave < 420.0) \{}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00161}00161         s = 0.3 + 0.7 * (wave -\/ 380.0) / (420.0 -\/ 380.0);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00162}00162     \}}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00164}00164     r = std::pow(r * s, type\_r);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00165}00165     g = std::pow(g * s, type\_g);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00166}00166     b = std::pow(b * s, type\_b);}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00167}00167     \textcolor{keywordflow}{return} qRgb(\textcolor{keywordtype}{int}(r * 255), \textcolor{keywordtype}{int}(g * 255), \textcolor{keywordtype}{int}(b * 255));}
+\DoxyCodeLine{\Hypertarget{renderthread_8cpp_source_l00168}00168 \}}
+
+\end{DoxyCode}

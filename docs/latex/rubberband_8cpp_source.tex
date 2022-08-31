@@ -1,0 +1,22 @@
+\hypertarget{rubberband_8cpp_source}{}\doxysection{rubberband.\+cpp}
+\mbox{\hyperlink{rubberband_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{rubberband_8h}{rubberband.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <QPainter>}}
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00003}\mbox{\hyperlink{class_rubber_band_ad7fe23a99762f96a38f5d023e6746877}{00003}} \mbox{\hyperlink{class_rubber_band_ad7fe23a99762f96a38f5d023e6746877}{RubberBand::RubberBand}}(QRubberBand::Shape s, QWidget* p) :}
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00004}00004     QRubberBand(s, p)}
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00005}00005 \{}
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00006}00006 \}}
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00008}\mbox{\hyperlink{class_rubber_band_aac0bbc7529efc3ea9f4ccaeeb39a1d9d}{00008}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_rubber_band_aac0bbc7529efc3ea9f4ccaeeb39a1d9d}{RubberBand::paintEvent}}(QPaintEvent* event)}
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00010}00010     QRubberBand::paintEvent(event);}
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00011}00011     QPainter p(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00012}00012     p.setPen(QPen(Qt::black, 2));}
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00013}00013     \textcolor{keywordflow}{if} (size().width() > 10 \&\& size().height() > 10)}
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00014}00014     \{}
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00015}00015         p.drawText(20, 20, QString(\textcolor{stringliteral}{"{}\%1,\%2"{}}).arg(size().width()).arg(size().height()));}
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00016}00016     \}}
+\DoxyCodeLine{\Hypertarget{rubberband_8cpp_source_l00017}00017 \}}
+
+\end{DoxyCode}
