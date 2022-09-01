@@ -13,8 +13,8 @@ You can control the fractal in two modes. In the first mode, you can zoom in on 
 <p>
     <img
     src="screenshots/welcome_dialog_screenshot.png"
-    width="30%" 
-    height="30%"
+    width="60%" 
+    height="60%"
     style="display: inline-block; margin: 0 auto; max-width: 300px">
 <p>
 
@@ -24,8 +24,8 @@ You can control the fractal in two modes. In the first mode, you can zoom in on 
 <p>
     <img
     src="screenshots/fractal_screenshot.png"
-    width="30%" 
-    height="30%"
+    width="60%" 
+    height="60%"
     style="display: inline-block; margin: 0 auto; max-width: 300px">
 <p>
 
@@ -35,8 +35,8 @@ You can control the fractal in two modes. In the first mode, you can zoom in on 
 <p>
     <img
     src="screenshots/fractal_2_screenshot.png"
-    width="30%" 
-    height="30%"
+    width="60%" 
+    height="60%"
     style="display: inline-block; margin: 0 auto; max-width: 300px">
 <p>
 
@@ -46,7 +46,7 @@ You can control the fractal in two modes. In the first mode, you can zoom in on 
 <p>
     <img
     src="screenshots/fractal_set_screenshot.png"
-    width="30%" 
-    height="30%"
+    width="60%" 
+    height="60%"
     style="display: inline-block; margin: 0 auto; max-width: 300px">
 <p>
